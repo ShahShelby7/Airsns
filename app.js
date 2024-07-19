@@ -14,7 +14,7 @@ const flash=require("connect-flash");     //for flash
 const passport=require("passport");       //for authentication
 const LocalStratergy=require("passport-local")
 const User=require("./models/user.js");
-const dbURL=process.env.dbURL;
+const dbURL=process.env.dbURL;    
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -76,7 +76,7 @@ app.listen(8080,()=>{
     console.log("server is listening on port 8080");
 });
 
-app.get("/",(req,res)=>{
+app.get("/listings",(req,res)=>{
     res.send("this is root route");
 });
 
