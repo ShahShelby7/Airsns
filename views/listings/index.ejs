@@ -1,0 +1,143 @@
+
+<%-layout("/layouts/boilerplate")%>
+<style>
+    #filters{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .filter{
+        text-align: center;
+        margin-left: 2rem;
+        margin-top:2rem;
+        opacity: 0.5;
+        transition: .1s;
+    }
+    .filter:hover{
+        opacity: 1;
+    }
+    .filter p{
+        font-size: 0.8rem;
+    }
+    .tax-toggle{
+        height: 3.5rem;
+        border: 1px solid white;
+        border-radius: 1rem;
+        margin-left: 5rem;
+        margin-top: 1rem;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .fa-solid{
+        color: red !important;
+    }
+    form button{
+        border: none;
+        background:transparent;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-8">
+    <div id="filters"> 
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="Trending"><button><i class="fa-solid fa-fire"></i></button></form></div>
+            <p>Trending</p>
+        </div>
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="Rooms"><button><i class="fa-solid fa-bed"></i></button></form></div>
+            <p>Rooms</p>
+        </div>
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="Iconic Cities"><button><i class="fa-solid fa-city" ></i></button></form></div>
+            <p>Iconic Cities</p>
+        </div>
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="Mountains"><button><i class="fa-solid fa-mountain" ></i></button></form></div>
+            <p>Mountains</p>
+        </div>
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="Pools"><button><i class="fa-solid fa-person-swimming" ></i></button></form></div>
+            <p>Pools</p>
+        </div>
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="Farm"><button><i class="fa-solid fa-cow" ></i></button></form></div>
+            <p>Farm</p>
+        </div>
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="castle"><button><i class="fa-solid fa-campground" ></i></button></form></div>
+            <p>castle</p>
+        </div>   
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="Boats"><button><i class="fa-solid fa-sailboat" ></i></button></form></div>
+            <p>Boats</p>
+        </div> 
+
+        <div class="filter">
+            <div><form action="/catagory"><input type="hidden" name="catagory" value="Trees"><button><i class="fa-solid fa-tree" ></i></button></form></div>
+            <p>Trees</p>
+        </div>    
+
+    </div>
+    </div>
+    <div class="col-md-4">
+        <div class="tax-toggle " >
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Display total after taxes</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2">
+    <%for(let list of lists){%>
+
+        <!-- bootstrap card -->
+        <div class="card col-sm-12 " ><br>
+            <img src="<%=list.image.url%>" class="card-img-top" alt="IMG" style="height: 20rem; width: 15rem;">
+            <div class="card-body">
+            <h5 class="card-title"><%=list.title%></h5>
+            <p class="card-text">
+                <!-- <%=list.description%>"<br> -->
+                <b><i class="fa-solid fa-location-dot"></i> Location : </b><%=list.country%> <br>
+                <b><i class="fa-solid fa-tag" ></i> Price : &#8377; <%=list.price.toLocaleString("en-IN")%></b>   <i class="taxes" style="display: none;"> &nbsp; +17% GST</i>
+            </p>
+            <a href="/listings/<%=list.id%>" class="btn btn-danger">View Details</a>
+            </div>
+        </div>
+        
+    <%}%>
+</div>
+<br><br><br>
+
+
+
+<!-- this body part will be added to the boilerplate code -->
+
+
+<script>
+    taxToggle=document.getElementById("flexSwitchCheckChecked")
+    taxToggle.addEventListener("click",()=>{
+        let taxInfo=document.getElementsByClassName("taxes")
+        for(tax of taxInfo){
+            if(tax.style.display != "inline"){
+                tax.style.display="inline"
+            }    
+            else{
+                tax.style.display="none"
+            }
+        }
+    });     
+</script>

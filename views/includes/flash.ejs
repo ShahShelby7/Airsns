@@ -1,0 +1,21 @@
+<!-- this code will be right above the  body (check boilerplate) -->
+<%if(success && success.length){%>
+<div class="alert alert-success alert-dismissible fade show col-6 offset-3 mt-2" role="alert">
+    <%=success%>  <!-- success is the flash cookie saved while performing operations-->
+
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<%}%>
+
+<!-- flash message for error -->
+<%if(error && error.length){%>
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3 mt-2" role="alert">
+        <%=error%>  <!-- error is the flash cookie saved while performing operations-->
+    
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>    
+    </div>
+<%}%>

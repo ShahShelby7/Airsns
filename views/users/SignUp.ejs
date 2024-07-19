@@ -1,0 +1,31 @@
+<%-layout("/layouts/boilerplate")%>
+
+
+<br><br>
+<div class="row">
+    <div class="col-6 offset-3">
+        <h2>SignUp to Airsns</h2>
+    <form action="/SignUp" method="post" class="needs-validation" novalidate>  <!-- class needs-validation from bootstrap for validation -->
+        <div  class="mb-3">
+            <label for="username" class="form-label">username</label>
+            <input type="text" name="username" id="username" placeholder="username" class="form-control" required >
+            <div class="invalid-feedback"> Please Enter Valid username </div>
+        </div>
+
+        <div  class="mb-3">
+            <label for="email" class="form-label" >email</label>
+            <input type="email" id="email" name="email" placeholder="email" class="form-control" required >
+            <div class="invalid-feedback"> Please Enter Valid email</div>
+        </div>
+
+        <div  class="mb-3">    
+            <label for="password" class="form-label">password</label>
+            <input type="password" id="password" name="password" placeholder="password" class="form-control" required>
+            <div class="invalid-feedback"> Please Enter Valid password</div>
+        </div>
+        <div class="col-8"></div>
+        <button class="btn btn-success">SignUp</button>
+
+        </form>
+    </div>
+</div>
