@@ -76,8 +76,8 @@ app.listen(8080,()=>{
     console.log("server is listening on port 8080");
 });
 
-app.get("/listings",(req,res)=>{
-    res.send("this is root route");
+app.get("/",(req,res)=>{
+    res.redirect("/listings")
 });
 
 // middleware to access the flash cookie
