@@ -11,12 +11,8 @@ Live at: https://airsns-project.onrender.com/
 - [Tech Stack](#tech-stack)  
 - [Architecture / Directory Structure](#architecture--directory-structure)  
 - [Installation & Setup](#installation--setup)  
-- [Configuration](#configuration)  
-- [Running Locally](#running-locally)  
-- [Usage](#usage)  
-- [Roadmap / Future Enhancements](#roadmap--future-enhancements)  
-- [Contributing](#contributing)  
-- [License](#license)  
+- [Preview](#Preview)  
+ 
 
 ---
 
@@ -95,15 +91,28 @@ Here’s an approximate view of the project structure (from the repo):
 
 ### 🏠 Homepage
 <p align="center">
-  <img src="./assets/homepage.png" alt="Homepage Screenshot" width="800">
+  <img src="./assets/Home.png" alt="Homepage Screenshot" width="800">
 </p>
 
-### 📋 Listings Page
+### 📋 Dynamic Searching
 <p align="center">
-  <img src="./assets/listings.png" alt="Listings Screenshot" width="800">
+  <img src="./assets/Dynamic Search.png" alt="Listings Screenshot" width="800">
 </p>
 
-### 🧳 Booking Page
+### 🧳 Property Details
 <p align="center">
-  <img src="./assets/booking.png" alt="Booking Page Screenshot" width="800">
+  <img src="./assets/Property Details.png" alt="Booking Page Screenshot" width="800">
 </p>
+
+### 🧳 Add Property
+<p align="center">
+  <img src="./assets/Add Property.png" alt="Booking Page Screenshot" width="800">
+</p>
+
+### 🧳 Review
+<p align="center">
+  <img src="./assets/Reviews.png" alt="Booking Page Screenshot" width="800">
+</p>
+
+
+
