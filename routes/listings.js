@@ -4,9 +4,9 @@ const wrapAsync=require("../utils/wrapAsync.js");   // wrap async is used for ha
 const {isLoggedin,isOwner}=require("../middleware.js");
 const {validateListing}=require("../middleware.js")
 const listingController=require("../controller/listing.js")
-const multer  = require('multer');
 const {storage}=require('../cloudConfig.js');
 const Listing = require("../models/listing.js");
+const multer =require("multer");
 const upload = multer({storage})
 
 
@@ -20,6 +20,7 @@ router.get("/new",isLoggedin,listingController.renderNewForm);   //isLoggedIN is
 
 //post request(posting data into listing model (database))
 // router.post("/",(req,res)=>{console.log(req.body)})
+//here we cannot post the direct image file to mongodb server...so we convert the local image file to online link
 router.post("/",isLoggedin,upload.single('image'),validateListing,wrapAsync(listingController.createListing));    //wrapAsync(listingController.createListing)
 
 

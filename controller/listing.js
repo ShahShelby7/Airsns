@@ -5,7 +5,6 @@ module.exports.index=async (req,res)=>{
     res.render("listings/index.ejs",{lists});
 }
 
-
 module.exports.renderNewForm=(req,res)=>{
     res.render("listings/new.ejs");
 }
@@ -16,7 +15,7 @@ module.exports.createListing=async (req,res)=>{
     let filename=req.file.filename;
     let list1=new Listing({...req.body});  //req.body contain name and value pair of title description.. and ... will expand the body
     list1.owner=req.user._id;   //while creating a new listing owner details will be added by the req(passport will save info of a user)
-    list1.image={url,filename}
+    list1.image={url,filename};
     await list1.save();
     req.flash("success","New listing is added");  //here is flash message is saved as cookie
     res.redirect("/listings");
@@ -38,7 +37,6 @@ module.exports.showListing=async (req, res) => {
         res.redirect("/listings");
     }
     res.render("listings/show.ejs", { list });
-
 }
 
 

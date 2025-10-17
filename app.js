@@ -8,7 +8,7 @@ const mongoose=require("mongoose");
 const path=require("path");
 const methodOverride=require("method-override");
 const ejsMate=require("ejs-mate");
-const session=require("express-session");  //for session   //here bydefault session storage is not meant for prodution purpose its only for develop stage
+const session=require("express-session");  //for session   //here bydefault session storage is not meant for prodution purpose its only for developing stage
 const MongoStore=require("connect-mongo")   //its for production purpose(it store the session in mongodb rather than local storage)
 const flash=require("connect-flash");     //for flash
 const passport=require("passport");       //for authentication
@@ -63,7 +63,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
 async function main(){
-    // await mongoose.connect("mongodb://127.0.0.1:27017/HODOPHILES");
+    // await mongoose.connect("mongodb://127.0.0.1:27017/HODOPHILES");   //this is used to connect the local storage
     await mongoose.connect(dbURL);
 }
 main().then(()=>{
